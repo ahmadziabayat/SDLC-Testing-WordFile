@@ -1,0 +1,16 @@
+JAVA_HOME="/usr/local/java/jdk1.8.0_101"
+MAVEN_HOME="/opt/apache-maven-3.3.9"
+
+set PATH="$PATH:$JAVA_HOME/bin"
+PATH=$PATH:$MAVEN_HOME/bin
+
+export JAVA_HOME
+export MAVEN_HOME
+
+
+sudo add-apt-repository ppa:pipelight/stable
+sudo apt-get update
+sudo apt-get install --install-recommends pipelight-multi
+sudo pipelight-plugin --update
+pipelight-plugin --enable silverlight
+sudo pipelight-plugin --create-mozilla-plugins
